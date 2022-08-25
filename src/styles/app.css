@@ -1,0 +1,174 @@
+/*** Not Inject ***/
+@import './variables';
+
+/* Import Vendor */
+@import './vendor/bootstrap';
+
+/* Import Base */
+@import './base/global';
+@import './base/fonts';
+@import './base/states';
+@import './base/utilities';
+
+/* Import Components */
+@import './components/logo.component';
+
+body {
+  background-color: rgba(17, 23, 38, 0.98);
+}
+
+#root {
+  font-size: 15px;
+}
+
+.app-header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 50px;
+  color: #ffffff;
+  background-color: rgb(17, 23, 38);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.app-footer {
+  /* position: absolute;
+  bottom: 0;
+  height: 0; */
+  width: 100%;
+  height: 50px;
+  background-color: rgb(37, 45, 60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-footer .btn {
+  width: 150px;
+  font-size: 0.8rem;
+}
+
+.buy-list,
+.ask-list {
+  /* height: calc(100vh - 140px); */
+  overflow: auto;
+}
+
+.orderbook-container {
+  /* height: calc(100vh - 50px); */
+  /* min-height: calc(100vh - 50px); */
+  background-color: rgba(17, 23, 38, 0.98);
+  padding-top: 50px;
+  font-size: 16px;
+}
+
+.orderbook-header {
+  background-color: rgb(17, 23, 38);
+  text-align: right;
+  color: rgb(105, 112, 125);
+  font-weight: bold;
+  border-top: solid 1px rgb(72, 79, 93);
+}
+
+.orderbook-body {
+  color: #ffffff;
+  text-align: right;
+  display: flex;
+}
+
+.buy-list .price {
+  color: rgb(32, 171, 121);
+}
+
+.ask-list .price {
+  color: rgb(32, 171, 121);
+}
+
+.buy-header {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.buy-row {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+.buy-row .graph {
+  height: 24px;
+  position: absolute;
+  background: #500c0d;
+  z-index: 1;
+}
+.buy-row .col {
+  z-index: 2;
+}
+.sell-row {
+  display: flex;
+  flex-direction: row-reverse;
+  position: relative;
+}
+.sell-row .graph {
+  height: 24px;
+  position: absolute;
+  background: #13332c;
+  z-index: 1;
+  left: 0;
+  max-width: 100%;
+}
+.sell-row .col {
+  z-index: 2;
+}
+.app-header select {
+  background: slategray;
+  color: #fff;
+}
+.select-section {
+  background: slategray;
+  padding: 2px 10px;
+  border-radius: 5px;
+}
+.app-header select:focus-visible {
+  outline: none;
+}
+@media (max-width: 768px) {
+  .buy-list,
+  .ask-list {
+    /* max-height: calc(50vh - 69px); */
+    overflow: auto;
+  }
+  .buy-list {
+    margin-top: 5px;
+  }
+  .ask-list {
+    margin-bottom: 5px;
+  }
+  .buy-list .price {
+    color: rgb(236, 66, 67);
+  }
+  .orderbook-body {
+    flex-direction: column-reverse;
+  }
+  .buy-header {
+    flex-direction: row;
+  }
+  .buy-row {
+    flex-direction: row;
+  }
+  .ask-list {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .sell-row .graph {
+    left: unset;
+    right: 0;
+    max-width: 100%;
+  }
+  .buy-row .graph {
+    right: 0;
+    max-width: 100%;
+  }
+}
